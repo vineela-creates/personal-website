@@ -3,25 +3,13 @@ export interface Experience {
   company: string;
   period: string;
   project: string;
-  achievements: string[];
-}
-export interface About {
-  my_info: string;
+  responsibilities: string[];
+  skills: string[];
 }
 export interface Education {
   degree: string;
   school: string;
   year: string;
-}
-
-export interface SkillCategory {
-  name: string;
-  skills: string[];
-}
-
-export interface Achievement {
-  title: string;
-  description: string;
 }
 
 export interface ResumeData {
@@ -30,17 +18,11 @@ export interface ResumeData {
     title: string;
     summary: string;
   };
-  about: {
-    my_info: string;
-  };
   experience: Experience[];
   education: Education[];
-  skills: SkillCategory[];
-  achievements: Achievement[];
   contact: {
     email: string;
     linkedin: string;
-    github: string;
   };
 }
 
@@ -50,18 +32,29 @@ export const resumeData: ResumeData = {
     title: "Senior Software Engineer",
     summary: "I build full stack user-friendly web and mobile applications",
   },
-  about: {
-    my_info: "",
-  },
   experience: [
     {
       title: "Senior Software Engineer",
       company: "Optum",
-      period: "Jan 2023 - Present",
+      period: "Jan 2023 - Jan 2025",
       project: "Medicare and Retirement Acquisition",
-      achievements: [
+      responsibilities: [
         "Built a responsive portal for Medicare and Retired consumers, which is a marketplace for buying health insurances.",
-        "Created the frontend view and backend APIs using Angular,Springboot respectively.",
+        "Created the frontend view and backend APIs using Angular,SpringWebflux respectively.",
+      ],
+      skills: [
+        "Rx Programming",
+        "Angular",
+        "Express.js",
+        "AEM",
+        "Cosmos DB",
+        "MySql",
+        "GraphQL",
+        "Azure Data Factory",
+        "Kubernetes",
+        "Microsoft Azure",
+        "Splunk",
+        "Dynatrace",
       ],
     },
     {
@@ -69,9 +62,19 @@ export const resumeData: ResumeData = {
       company: "Optum",
       period: "July 2019 - Dec 2022",
       project: "Contract Lifecycle Management",
-      achievements: [
+      responsibilities: [
         "Implemented an event-driven data pipeline using Spring Cloud Streams and Apache Kafka to automate the ingestion, validation, and processing of healthcare facility contracts.",
         "Developed a responsive, user-friendly Contract Admin dashboard in React and Next.js that provided real-time contract status monitoring.",
+      ],
+      skills: [
+        "React",
+        "Next.js",
+        "Spring Boot - Modules",
+        "Apache Kafka",
+        "Spring Cloud Streams",
+        "PostgreSQL",
+        "MonogDB",
+        "OpenShift",
       ],
     },
     {
@@ -79,9 +82,20 @@ export const resumeData: ResumeData = {
       company: "Medica Health Plans",
       period: "June 2018 - July 2019",
       project: "Provider Onboarding Modernization",
-      achievements: [
+      responsibilities: [
         "Engineered automated data integration pipelines for healthcare vendor data onboarding into CATCUS, reducing processing time by 80% and improving accuracy through stakeholder collaboration.",
         "Developed full-stack healthcare applications using Spring Boot microservices, React, and Oracle stored procedures for optimized data management.",
+      ],
+      skills: [
+        "Spring boot REST",
+        "Apache POI",
+        "WebSphere",
+        "React",
+        "JUnit",
+        "Oracle DB",
+        "PL/SQL",
+        "Tomcat",
+        "Jenkins",
       ],
     },
     {
@@ -89,9 +103,16 @@ export const resumeData: ResumeData = {
       company: "UCare",
       period: "May 2017 — Jun 2018",
       project: "Benefits Portal",
-      achievements: [
+      responsibilities: [
         "Built microservices architecture using Spring Boot REST for Benefits Portal, improving system scalability and enabling independent service updates.",
         "Developed RESTful APIs and stored procedures using Oracle PL/SQL and Spring Boot for user authentication and benefits enrollment functionalities.",
+      ],
+      skills: [
+        "Microservices",
+        "RESTful APIs",
+        "Spring Boot REST",
+        "Spring Security",
+        "Oracle DB",
       ],
     },
     {
@@ -99,10 +120,11 @@ export const resumeData: ResumeData = {
       company: "Virgosys Software Private Limited",
       period: "Sep 2015 — May 2016",
       project: "",
-      achievements: [
+      responsibilities: [
         "Led architectural design with Spring MVC, JSP, JSTL, AJAX, SOAP and JMS/Active MQ integration.",
         "Established development practices using Maven, JUnit, log4j and SVN for improved deployment and code quality.",
       ],
+      skills: ["Spring", "JSP", "SOAP", "JSTL", "AJAX"],
     },
   ],
   education: [
@@ -113,29 +135,12 @@ export const resumeData: ResumeData = {
     },
     {
       degree: "Bachelors in Technology",
-      school: "Jyothismathi Institue of Technology and Sciences",
+      school: "Jyothismathi Institue of Technology and Sciences - JNTU ",
       year: "2011-2015",
     },
   ],
-  skills: [
-    {
-      name: "Frontend",
-      skills: ["React", "TypeScript", "Tailwind CSS"],
-    },
-    {
-      name: "Backend",
-      skills: ["Node.js", "Python", "SQL"],
-    },
-  ],
-  achievements: [
-    {
-      title: "Best Innovation Award",
-      description: "Received company-wide recognition for innovative solution",
-    },
-  ],
   contact: {
-    email: "your.email@example.com",
-    linkedin: "linkedin.com/in/yourprofile",
-    github: "github.com/yourusername",
+    email: "sridharavineela304@gmail.com",
+    linkedin: "www.linkedin.com/in/vsridha",
   },
 };

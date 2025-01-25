@@ -3,8 +3,10 @@ import React from "react";
 import { resumeData } from "../data/ResumeData";
 import { Header } from "./sections/Header";
 import ThemeToggle from "./ThemeToggle";
+import PdfDownload from "./PdfDownload";
 
 const PageDetails: React.FC = () => {
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -63,7 +65,7 @@ const PageDetails: React.FC = () => {
 
           <section
             id="experience"
-            className="mb-16 lg:mb-36 scroll-mt-16 lg:scroll-mt-24"
+            className="mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
           >
             <div className="max-w-full leading-6">
               <h1 className="text-blue-800 mb-8 font-bold text-xl md:text-2xl">
@@ -71,7 +73,7 @@ const PageDetails: React.FC = () => {
               </h1>
               {resumeData.experience.map((exp, index) => (
                 <div key={index} className="mb-8">
-                  <div className="mb-4 text-cyan-700 font-semibold">
+                  <div className="mb-4 dark:text-teal-300 text-teal-800 font-semibold">
                     <p className="break-words">
                       {exp.title}, {exp.company} - {exp.project}
                     </p>
@@ -79,9 +81,20 @@ const PageDetails: React.FC = () => {
                   </div>
                   <div>
                     <ul className="list-disc ml-4 md:ml-8 space-y-2">
-                      {exp.achievements.map((a, index) => (
+                      {exp.responsibilities.map((a, index) => (
                         <li key={index} className="text-justify">
                           {a}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <ul className="mt-2 flex flex-wrap">
+                      {exp.skills.map((skill, index) => (
+                        <li key={index} className="mr-1.5 mt-2">
+                          <span className="flex items-center rounded-full dark:bg-teal-400/10 bg-teal-800 px-3 py-1 text-xs font-medium leading-5 dark: text-teal-300  ">
+                            {skill}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -93,7 +106,7 @@ const PageDetails: React.FC = () => {
 
           <section
             id="education"
-            className="mb-16 lg:mb-36 scroll-mt-16 lg:scroll-mt-24"
+            className="mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
           >
             <div className="max-w-full leading-6">
               <h1 className="text-blue-800 mb-8 font-bold text-xl md:text-2xl">
@@ -101,12 +114,39 @@ const PageDetails: React.FC = () => {
               </h1>
               {resumeData.education.map((edu, index) => (
                 <div className="mb-6" key={index}>
-                  <p className="text-cyan-700 font-semibold">{edu.school}</p>
+                  <p className="text-teal-800 dark:text-teal-300 font-semibold">
+                    {edu.school}
+                  </p>
                   <p>{edu.year}</p>
                   <p>{edu.degree}</p>
                 </div>
               ))}
             </div>
+          </section>
+          <section
+            id="pdf_resume"
+            className="mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
+          >
+            <PdfDownload
+              pdfUrl="/resume.pdf"
+              className="mt-2 flex flex-wrap font-bold"
+            >
+              View Full Resume
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
+              </svg>
+            </PdfDownload>
           </section>
         </main>
       </div>
