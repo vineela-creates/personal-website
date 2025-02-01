@@ -4,16 +4,19 @@ import { resumeData } from "../data/ResumeData";
 import { Header } from "./sections/Header";
 import ThemeToggle from "./ThemeToggle";
 import PdfDownload from "./PdfDownload";
+import ContactForm from "./sections/ContactForm";
 
 const PageDetails: React.FC = () => {
-  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl px-4 py-8 font-sans md:px-12 md:py-16 lg:py-0 dark:bg-slate-900">
+    <div
+      className="mx-auto min-h-screen max-w-screen
+     px-4 py-8  md:px-12 md:py-16 lg:py-0 dark:bg-slate-900 font-inconsolata font-light"
+    >
       {/* Mobile-first layout with flex-col by default, switching to row on larger screens */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-4">
         {/* Theme toggle and navigation container */}
@@ -32,33 +35,41 @@ const PageDetails: React.FC = () => {
         <main className="w-full lg:w-[52%] pt-12 lg:pt-24 lg:py-24 dark:text-white">
           <section
             id="about"
-            className="scroll-mt-16 mb-16 lg:mb-20 lg:scroll-mt-24"
+            className="scroll-mt-16 mb-16 lg:mb-20 lg:scroll-mt-24 animate-fade-left animate-once"
           >
+            <h1 className="text-blue-600 mb-8 font-bold text-xl md:text-2xl">
+              ABOUT
+            </h1>
             <div className="text-justify space-y-4">
               <p>
-                I'm a full stack developer passionate about designing and
-                building user-friendly web applications that seamlessly blend
-                robust frontend and backend engineering. My expertise lies at
-                the intersection of design, development, and maintenance of
-                applications optimized for peak performance.
+                Hi there! I'm Vineela, a Senior Software Engineer passionate
+                about architecting and building impactful web applications that
+                users love. I thrive on transforming complex business
+                requirements into elegant, scalable solutions that make a real
+                difference.
               </p>
               <p>
-                Currently, I'm a Senior Software Engineer at Techvision Co for
-                UnitedHealth Group, specializing in full stack development of
-                the Retiree Insurance Portal. I contribute to the creation and
-                maintenance of UI components, backend APIs, and data pipelines
-                that ensure a smooth experience for Medicare customers.
+                Currently at Techvision Co, I lead full-stack development
+                initiatives where I get to blend my love for robust backend
+                systems with creating intuitive user experiences. What excites
+                me most about software engineering is the constant evolution -
+                there's always something new to learn and innovative ways to
+                solve problems.
               </p>
               <p>
-                Throughout my career, I've developed software solutions for
-                various healthcare companies. Additionally, I mentor junior
-                developers on our team, sharing best practices in programming
-                and software development.
+                I particularly enjoy working on challenging projects that push
+                boundaries, whether it's optimizing high-traffic applications,
+                implementing event-driven architectures, or crafting seamless
+                user interfaces. When I'm not coding, I mentor junior developers
+                on our team, sharing not just technical knowledge but also
+                practical insights from my journey in tech.
               </p>
               <p>
-                In my spare time, I enjoy reading books, solving puzzles,
-                playing badminton, and spending quality time with friends and
-                family.
+                Outside the world of code, you'll find me playing badminton,
+                solving puzzles (yes, debugging skills come in handy!), and
+                spending quality time with friends and family. I believe these
+                diverse interests help bring fresh perspectives to my technical
+                problem-solving approach.
               </p>
             </div>
           </section>
@@ -68,7 +79,7 @@ const PageDetails: React.FC = () => {
             className="mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
           >
             <div className="max-w-full leading-6">
-              <h1 className="text-blue-800 mb-8 font-bold text-xl md:text-2xl">
+              <h1 className="text-blue-600 mb-8 font-bold text-xl md:text-2xl">
                 EXPERIENCE
               </h1>
               {resumeData.experience.map((exp, index) => (
@@ -109,7 +120,7 @@ const PageDetails: React.FC = () => {
             className="mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
           >
             <div className="max-w-full leading-6">
-              <h1 className="text-blue-800 mb-8 font-bold text-xl md:text-2xl">
+              <h1 className="text-blue-600 mb-8 font-bold text-xl md:text-2xl">
                 EDUCATION
               </h1>
               {resumeData.education.map((edu, index) => (
@@ -147,6 +158,12 @@ const PageDetails: React.FC = () => {
                 />
               </svg>
             </PdfDownload>
+          </section>
+          <section
+            id="contact"
+            className="mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
+          >
+            <ContactForm />
           </section>
         </main>
       </div>
