@@ -11,11 +11,15 @@ const PageDetails: React.FC = () => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
   };
-
+  const gradients = {
+    ocean: "bg-gradient-to-r from-lime-200 via-emerald-300 to-green-300",
+    sunset: "bg-gradient-to-r from-orange-500 via-red-500 to-purple-500",
+    forest: "bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500",
+  };
   return (
     <div
-      className="mx-auto min-h-screen max-w-screen
-     px-4 py-8  md:px-12 md:py-16 lg:py-0 dark:bg-slate-900 font-inconsolata font-light"
+      className={`mx-auto min-h-screen ${gradients.ocean} max-w-screen
+     px-4 py-8  md:px-12 md:py-16 lg:py-0 bg-slate-900 dark:bg-blue-500 font-inconsolata font-light`}
     >
       {/* Mobile-first layout with flex-col by default, switching to row on larger screens */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-4">
@@ -32,7 +36,7 @@ const PageDetails: React.FC = () => {
         </div>
 
         {/* Main Content - full width on mobile */}
-        <main className="w-full lg:w-[52%] pt-12 lg:pt-24 lg:py-24 dark:text-white">
+        <main className="w-full lg:w-[52%] pt-12 lg:pt-24 lg:py-24 dark:text-teal-800">
           <section
             id="about"
             className="scroll-mt-16 mb-16 lg:mb-20 lg:scroll-mt-24 animate-fade-left animate-once"
@@ -84,7 +88,7 @@ const PageDetails: React.FC = () => {
               </h1>
               {resumeData.experience.map((exp, index) => (
                 <div key={index} className="mb-8">
-                  <div className="mb-4 dark:text-teal-300 text-teal-800 font-semibold">
+                  <div className="mb-4 dark:text-blue-600 text-teal-800 font-semibold">
                     <p className="break-words">
                       {exp.title}, {exp.company} - {exp.project}
                     </p>
@@ -103,7 +107,7 @@ const PageDetails: React.FC = () => {
                     <ul className="mt-2 flex flex-wrap">
                       {exp.skills.map((skill, index) => (
                         <li key={index} className="mr-1.5 mt-2">
-                          <span className="flex items-center rounded-full dark:bg-teal-400/10 bg-teal-800 px-3 py-1 text-xs font-medium leading-5 dark: text-teal-300  ">
+                          <span className="flex items-center rounded-full dark:bg-slate-900 bg-teal-800 px-3 py-1 text-xs font-medium leading-5 dark: text-teal-300  ">
                             {skill}
                           </span>
                         </li>
@@ -125,7 +129,7 @@ const PageDetails: React.FC = () => {
               </h1>
               {resumeData.education.map((edu, index) => (
                 <div className="mb-6" key={index}>
-                  <p className="text-teal-800 dark:text-teal-300 font-semibold">
+                  <p className="text-teal-800 dark:text-slate-900 font-semibold">
                     {edu.school}
                   </p>
                   <p>{edu.year}</p>
@@ -140,7 +144,7 @@ const PageDetails: React.FC = () => {
           >
             <PdfDownload
               pdfUrl="/resume.pdf"
-              className="mt-2 flex flex-wrap font-bold"
+              className="mt-2 flex flex-wrap font-bold dark:text-slate-800"
             >
               View Full Resume
               <svg

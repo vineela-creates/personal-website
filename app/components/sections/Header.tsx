@@ -20,7 +20,7 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
       <h1 className="text-3xl font-bold tracking-tight text-blue-600 mb-4 lg:mb-6 dark:text-white">
         {data.intro.name}
       </h1>
-      <h2 className="text-xl leading-relaxed text-blue-600 mb-6 lg:mb-8">
+      <h2 className="text-xl leading-relaxed text-blue-600 mb-6 lg:mb-8  dark:text-white">
         {data.intro.title}
       </h2>
     </div>
