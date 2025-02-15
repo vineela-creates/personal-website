@@ -41,6 +41,7 @@ export const resumeData: ResumeData = {
       responsibilities: [
         "Built a responsive portal for Medicare and Retired consumers, which is a marketplace for buying health insurances.",
         "Created the frontend view and backend APIs using Angular,SpringWebflux respectively.",
+        "Maintained 40% improved performance and 95% user satisfaction across 8+ employer groups.",
       ],
       skills: [
         "Rx Programming",
@@ -65,6 +66,7 @@ export const resumeData: ResumeData = {
       responsibilities: [
         "Implemented an event-driven data pipeline using Spring Cloud Streams and Apache Kafka to automate the ingestion, validation, and processing of healthcare facility contracts.",
         "Developed a responsive, user-friendly Contract Admin dashboard in React and Next.js that provided real-time contract status monitoring.",
+        "Established a robust error handling and retry mechanism within Spring Boot applications that automatically detected and resolved common contract processing issues, reducing the average time to resolution by 60% and improving overall system reliability.",
       ],
       skills: [
         "React",

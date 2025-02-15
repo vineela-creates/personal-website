@@ -1,4 +1,5 @@
 "use client";
+import { BookOpen, Github, Linkedin } from "lucide-react";
 import { SectionProps } from "../../types/SectionProps";
 import Image from "next/image";
 
@@ -17,12 +18,43 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
     </div>
 
     <div className="text-center flex flex-col text-wrap">
-      <h1 className="text-3xl font-bold tracking-tight text-blue-600 mb-4 lg:mb-6 dark:text-white">
+      <h1 className="text-3xl font-bold tracking-tight text-blue-600 mb-4 lg:mb-6">
         {data.intro.name}
       </h1>
-      <h2 className="text-xl leading-relaxed text-blue-600 mb-6 lg:mb-8  dark:text-white">
+      <h2 className="text-xl leading-relaxed text-blue-600 mb-6 lg:mb-8">
         {data.intro.title}
       </h2>
+
+      <div className="flex flex-row ml-20 lg:ml-25 gap-6 mb-8">
+        <a
+          href="https://www.linkedin.com/in/vsridha"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          aria-label="LinkedIn Profile"
+        >
+          <Linkedin size={28} />
+        </a>
+
+        <a
+          href="https://github.com/vineela-creates"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          aria-label="GitHub Profile"
+        >
+          <Github size={28} />
+        </a>
+        <a
+          href="https://www.goodreads.com/user/show/185179856-vineela-sridhara"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          aria-label="Goodreads Profile"
+        >
+          <BookOpen size={28} />
+        </a>
+      </div>
     </div>
   </header>
 );

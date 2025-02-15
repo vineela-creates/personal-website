@@ -4,7 +4,6 @@ import { resumeData } from "../data/ResumeData";
 import { Header } from "./sections/Header";
 import ThemeToggle from "./ThemeToggle";
 import PdfDownload from "./PdfDownload";
-import ContactForm from "./sections/ContactForm";
 
 const PageDetails: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -13,12 +12,13 @@ const PageDetails: React.FC = () => {
   };
   const gradients = {
     ocean: "bg-gradient-to-r from-lime-200 via-emerald-300 to-green-300",
-    sunset: "bg-gradient-to-r from-orange-500 via-red-500 to-purple-500",
     forest: "bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500",
+    sunset: "dark:bg-gradient-to-t dark:from-slate-400 dark:to-zinc-400",
+    sunrise: "bg-gradient-to-t from-orange-300 to-gray-100",
   };
   return (
     <div
-      className={`mx-auto min-h-screen ${gradients.ocean} max-w-screen
+      className={`mx-auto min-h-screen ${gradients.sunrise} ${gradients.sunset} max-w-screen
      px-4 py-8  md:px-12 md:py-16 lg:py-0 bg-slate-900 dark:bg-blue-500 font-inconsolata font-light`}
     >
       {/* Mobile-first layout with flex-col by default, switching to row on larger screens */}
@@ -36,15 +36,15 @@ const PageDetails: React.FC = () => {
         </div>
 
         {/* Main Content - full width on mobile */}
-        <main className="w-full lg:w-[52%] pt-12 lg:pt-24 lg:py-24 dark:text-teal-800">
+        <main className="w-full lg:w-[52%] pt-12 lg:pt-24 lg:py-24">
           <section
             id="about"
             className="scroll-mt-16 mb-16 lg:mb-20 lg:scroll-mt-24 animate-fade-left animate-once"
           >
-            <h1 className="text-blue-600 mb-8 font-bold text-xl md:text-2xl">
+            <h1 className="text-blue-800 mb-8 font-bold text-xl md:text-2xl">
               ABOUT
             </h1>
-            <div className="text-justify space-y-4">
+            <div className="text-justify space-y-4 dark: text-teal-800">
               <p>
                 Hi there! I'm Vineela, a Senior Software Engineer passionate
                 about architecting and building impactful web applications that
@@ -69,10 +69,10 @@ const PageDetails: React.FC = () => {
                 practical insights from my journey in tech.
               </p>
               <p>
-                Outside the world of code, you'll find me playing badminton,
-                solving puzzles (yes, debugging skills come in handy!), and
-                spending quality time with friends and family. I believe these
-                diverse interests help bring fresh perspectives to my technical
+                Outside the world of code, you'll find me reading books, solving
+                puzzles (yes, debugging skills come in handy!), and spending
+                quality time with friends and family. I believe these diverse
+                interests help bring fresh perspectives to my technical
                 problem-solving approach.
               </p>
             </div>
@@ -95,7 +95,7 @@ const PageDetails: React.FC = () => {
                     <p>{exp.period}</p>
                   </div>
                   <div>
-                    <ul className="list-disc ml-4 md:ml-8 space-y-2">
+                    <ul className="list-disc ml-4 md:ml-8 space-y-2 dark: text-teal-800">
                       {exp.responsibilities.map((a, index) => (
                         <li key={index} className="text-justify">
                           {a}
@@ -129,11 +129,13 @@ const PageDetails: React.FC = () => {
               </h1>
               {resumeData.education.map((edu, index) => (
                 <div className="mb-6" key={index}>
-                  <p className="text-teal-800 dark:text-slate-900 font-semibold">
+                  <p className="text-teal-800 dark:text-blue-600 font-semibold">
                     {edu.school}
                   </p>
-                  <p>{edu.year}</p>
-                  <p>{edu.degree}</p>
+                  <div className="dark: text-teal-800">
+                    <p>{edu.year}</p>
+                    <p>{edu.degree}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -163,12 +165,7 @@ const PageDetails: React.FC = () => {
               </svg>
             </PdfDownload>
           </section>
-          <section
-            id="contact"
-            className="mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
-          >
-            <ContactForm />
-          </section>
+         
         </main>
       </div>
     </div>

@@ -13,7 +13,7 @@ const PdfDownload: React.FC<PDFLinkProps> = ({
       <a
         href={pdfUrl}
         onClick={handleDownload}
-        className={`group/link text-teal-800 dark:text-teal-300 hover:text-blue-800 font-bold ${className}`}
+        className={`group/link text-teal-800 hover:text-blue-800 font-bold ${className}`}
       >
         {children}
       </a>
