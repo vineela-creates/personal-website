@@ -165,7 +165,12 @@ const PageDetails: React.FC = () => {
               </svg>
             </PdfDownload>
           </section>
-         
+          <div className="w-full lg:w-auto">
+            <h4 className="text-sm">
+              Designed using <b>Next.js,React,Tailwind CSS </b> deployed on{" "}
+              <b>Netlify</b>
+            </h4>
+          </div>
         </main>
       </div>
     </div>
