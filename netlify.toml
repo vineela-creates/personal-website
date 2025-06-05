@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm install sharp --platform=linux --arch=x64 && npm run build"
   publish = ".next"
 
 [[plugins]]
@@ -8,7 +8,9 @@
 [build.environment]
   NEXT_USE_NETLIFY_EDGE = "true"
   NEXT_TELEMETRY_DISABLED = "1"
+  NEXT_FORCE_EDGE_IMAGES = "true"
   NEXT_PRIVATE_NETLIFY_FORMS = "true"
+  NPM_FLAGS = "--production=false"
 
 # Form detection
 [forms]
