@@ -1,39 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const formData = new FormData(e.currentTarget);
-
-    try {
-      const response = await fetch("/api/forms/contact", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        e.currentTarget.reset();
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus("idle"), 3000);
-    }
-  };
-
   return (
     <div className="max-w-2xl mx-auto">
       <div
@@ -46,11 +13,13 @@ export default function ContactForm() {
         <h2 className="text-3xl font-bold text-teal-800 mb-2 text-center">
           LET'S CONNECT
         </h2>
+
+        {/* Simple Netlify Form - No JavaScript */}
         <form
           name="contact"
           method="POST"
           data-netlify="true"
-          onSubmit={handleSubmit}
+          action="/success"
           className="space-y-6"
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -108,24 +77,9 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            disabled={isSubmitting}
-            className={`w-full font-semibold py-3 px-6 rounded-lg transition-all duration-200 ${
-              isSubmitting
-                ? "bg-gray-400 cursor-not-allowed"
-                : submitStatus === "success"
-                ? "bg-green-500 hover:bg-green-600"
-                : submitStatus === "error"
-                ? "bg-red-500 hover:bg-red-600"
-                : "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
-            } text-white`}
+            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 focus:ring-4 focus:ring-blue-300 transition-all duration-200"
           >
-            {isSubmitting
-              ? "Sending..."
-              : submitStatus === "success"
-              ? "Message Sent! ✓"
-              : submitStatus === "error"
-              ? "Failed to Send ✗"
-              : "Send Message"}
+            Send Message
           </button>
         </form>
       </div>

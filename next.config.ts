@@ -1,14 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Ensure API routes are properly handled
-  async rewrites() {
-    return [
-      {
-        source: "/api/forms/:path*",
-        destination: "/api/forms/:path*",
-      },
-    ];
-  },
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
 };
 
-module.exports = nextConfig;
+export default nextConfig;

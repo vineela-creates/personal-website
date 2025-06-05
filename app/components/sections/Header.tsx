@@ -8,7 +8,7 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
     <div className="flex justify-center lg:justify-start mb-8">
       <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-72 lg:h-72">
         <Image
-          src="/Linkedin pic.jpeg"
+          src="/Linkedin_pic.jpeg"
           alt="Profile picture"
           fill
           className="object-cover rounded-full border-2 border-gray-200 shadow-lg w-full h-full"
