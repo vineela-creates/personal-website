@@ -5,7 +5,7 @@ import { inconsolata } from "./ui/fonts";
 
 export const metadata: Metadata = {
   title: "Vineela Sridhara | Senior Software Engineer",
-  description: "A single page website",
+  description: "My technical website",
 };
 
 export default function RootLayout({

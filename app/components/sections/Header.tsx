@@ -18,10 +18,10 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
     </div>
 
     <div className="text-center flex flex-col text-wrap">
-      <h1 className="text-3xl font-bold tracking-tight text-blue-600 mb-4 lg:mb-6">
+      <h1 className="text-3xl font-bold tracking-tight text-teal-800 mb-4 lg:mb-6">
         {data.intro.name}
       </h1>
-      <h2 className="text-xl leading-relaxed text-blue-600 mb-6 lg:mb-8">
+      <h2 className="text-xl leading-relaxed text-teal-800 mb-6 lg:mb-8">
         {data.intro.title}
       </h2>
 
@@ -30,7 +30,7 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
           href="https://www.linkedin.com/in/vsridha"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
           aria-label="LinkedIn Profile"
         >
           <Linkedin size={28} />
@@ -40,7 +40,7 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
           href="https://github.com/vineela-creates"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
           aria-label="GitHub Profile"
         >
           <Github size={28} />
@@ -49,7 +49,7 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
           href="https://www.goodreads.com/user/show/185179856-vineela-sridhara"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
           aria-label="Goodreads Profile"
         >
           <BookOpen size={28} />
