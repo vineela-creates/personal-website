@@ -14,7 +14,6 @@ export default function ContactForm() {
           LET'S CONNECT
         </h2>
 
-        {/* Simple Netlify Form - No JavaScript */}
         <form
           name="contact"
           method="POST"
