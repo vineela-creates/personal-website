@@ -1,16 +1,10 @@
 [build]
-  command = "npm install sharp --platform=linux --arch=x64 && npm run build"
-  publish = ".next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  command = "npm run build"
+  publish = "out"
 
 [build.environment]
-  NEXT_USE_NETLIFY_EDGE = "true"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NEXT_TELEMETRY_DISABLED = "1"
-  NEXT_FORCE_EDGE_IMAGES = "true"
-  NEXT_PRIVATE_NETLIFY_FORMS = "true"
-  NPM_FLAGS = "--production=false"
 
 # Form detection
 [forms]
