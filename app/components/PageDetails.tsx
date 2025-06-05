@@ -5,6 +5,7 @@ import { Header } from "./sections/Header";
 import ThemeToggle from "./ThemeToggle";
 import PdfDownload from "./PdfDownload";
 import { Bold } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const PageDetails: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -194,74 +195,7 @@ const PageDetails: React.FC = () => {
             id="get_in_touch"
             className="mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
           >
-            <div
-              className="max-w-full leading-6 lg:shadow-xl lg:border-orange-600 lg:p-10 p-10 lg:rounded-lg rounded-lg 
-            shadow-xl transition-all duration-300 ease-in-out 
-            hover:shadow-2xl hover:scale-105
-             hover:bg-orange-200
-             dark:hover:bg-slate-800 focus:shadow-2xl focus:scale-105 active:scale-95"
-            >
-              <h1 className="font-bold md:text-2xl text-center mb-10">
-                LET'S CONNECT !!
-              </h1>
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                className="mb-8 space-y-6"
-              >
-                <div className="mb-8">
-                  <label>Your Name</label>
-                  <input
-                    type="input"
-                    name="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 outline-none"
-                    placeholder="Enter your name"
-                    required
-                  />
-                </div>
-                <div className="mb-8">
-                  <label>Email</label>
-                  <input
-                    type="input"
-                    name="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 outline-none"
-                    placeholder="Enter email address"
-                    required
-                  />
-                </div>
-                <div className="mb-8">
-                  <label>Tell me about the project !!</label>
-                  <textarea
-                    name="project"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 outline-none"
-                    placeholder="Tell me about the project.."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 focus:ring-4 focus:ring-blue-300 transition-all duration-200 transform hover:scale-105"
-                >
-                  Send Message
-                </button>
-              </form>
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="grid md:grid-cols-2 gap-4 text-center md:text-left">
-                  <div>
-                    <h4 className="font-semibold text-teal-800 mb-1">Email</h4>
-                    <p className="text-teal-600">
-                      sridharavineela304@gmail.com
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-teal-800 mb-1">
-                      Response Time
-                    </h4>
-                    <p className="text-teal-600">Within 24 hours</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ContactForm />
           </section>
           <div className="w-full lg:w-auto">
             <h3 className="text-md">

@@ -8,3 +8,8 @@
 [build.environment]
   NEXT_USE_NETLIFY_EDGE = "true"
   NEXT_TELEMETRY_DISABLED = "1"
+  NEXT_PRIVATE_NETLIFY_FORMS = "true"
+
+# Form detection
+[forms]
+  settings = { }
