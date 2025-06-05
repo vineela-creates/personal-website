@@ -6,7 +6,7 @@ import Image from "next/image";
 export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
   <header className="w-full px-4 py-8 md:px-0 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:py-24">
     <div className="flex justify-center lg:justify-start mb-8">
-      <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-72 lg:h-72">
+      <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-80 lg:h-80">
         <Image
           src="/Linkedin_pic.jpeg"
           alt="Profile picture"
