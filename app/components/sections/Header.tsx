@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
   <header className="w-full px-4 py-8 md:px-0 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:py-24">
-    <div className="flex justify-center lg:justify-start mb-8">
-      <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-80 lg:h-80">
+    <div className="flex justify-center mb-8">
+      <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80">
         <img
           src="/Linkedinpic.jpeg"
           alt="Profile picture"
@@ -23,12 +23,12 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
         {data.intro.title}
       </h2>
 
-      <div className="flex flex-row ml-20 lg:ml-25 gap-6 mb-8">
+      <div className="flex flex-row gap-6 mb-8 items-center justify-center">
         <a
           href="https://www.linkedin.com/in/vsridha"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors flex-shrink-0"
           aria-label="LinkedIn Profile"
         >
           <Linkedin size={28} />
@@ -38,7 +38,7 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
           href="https://github.com/vineela-creates"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors flex-shrink-0"
           aria-label="GitHub Profile"
         >
           <Github size={28} />
@@ -47,7 +47,7 @@ export const Header: React.FC<SectionProps> = ({ data, onScroll }) => (
           href="https://www.goodreads.com/user/show/185179856-vineela-sridhara"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors"
+          className="text-teal-800 hover:text-blue-800 dark:hover:text-cyan-500 transition-colors flex-shrink-0"
           aria-label="Goodreads Profile"
         >
           <BookOpen size={28} />
