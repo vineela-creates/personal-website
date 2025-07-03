@@ -3,8 +3,6 @@ import React from "react";
 import { resumeData } from "../data/ResumeData";
 import { Header } from "./sections/Header";
 import ThemeToggle from "./ThemeToggle";
-import PdfDownload from "./PdfDownload";
-import { Bold } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 const PageDetails: React.FC = () => {
@@ -168,31 +166,6 @@ const PageDetails: React.FC = () => {
                 with emerging technologies and industry best practices
               </p>
             </div>
-          </section>
-          <section
-            id="pdf_resume"
-            className="mb-8 sm:mb-16 lg:mb-20 scroll-mt-16 lg:scroll-mt-24"
-          >
-            <PdfDownload
-              pdfUrl="/resume.pdf"
-              className="mt-2 flex flex-wrap font-bold dark:text-slate-800 text-sm sm:text-base"
-            >
-              View Full Resume
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-4 h-4 sm:w-6 sm:h-6 ml-1"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                />
-              </svg>
-            </PdfDownload>
           </section>
           <section
             id="get_in_touch"
