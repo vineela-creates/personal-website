@@ -242,6 +242,10 @@ export const resumeData: ResumeData = {
   ],
   skillCategories: [
     {
+      category: "Programming Languages",
+      skills: ["Java", "JavaScript", "TypeScript", "Python", "SQL"],
+    },
+    {
       category: "Frontend",
       skills: [
         "React",
@@ -281,17 +285,33 @@ export const resumeData: ResumeData = {
       category: "Cloud & DevOps",
       skills: [
         "Microsoft Azure",
+        "AWS",
         "Kubernetes",
         "OpenShift",
         "Docker",
         "Jenkins",
-        "Azure DevOps",
         "CI/CD",
       ],
     },
     {
       category: "Message Queue & Streaming",
       skills: ["Apache Kafka", "Spring Cloud Streams", "JMS", "Active MQ"],
+    },
+    {
+      category: "Artifical Intelligence & ML",
+      skills: [
+        "RAG - Retrieval Augmented Generation",
+        "Vector Stores",
+        "OpenAI APIs",
+        "Spring AI",
+        "GPT-3/GPT-4",
+        "Deep Learning",
+        "PyTorch",
+        "TensorFlow",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+      ],
     },
     {
       category: "Monitoring & Tools",
