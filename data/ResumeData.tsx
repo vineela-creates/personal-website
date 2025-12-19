@@ -236,7 +236,7 @@ export const resumeData: ResumeData = {
     },
     {
       icon: "👥",
-      value: "6+",
+      value: "8+",
       label: "Years Experience",
     },
   ],
