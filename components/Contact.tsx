@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { resumeData } from "@/data/ResumeData";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,17 +14,50 @@ export default function Contact() {
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+    setErrorMessage("");
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
+    try {
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: "sridharavineela304@gmail.com",
+        to_name: "Vineela Sridhara",
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      // Success
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1500);
+
+      // Reset status after 5 seconds
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("error");
+      setErrorMessage(
+        "Failed to send message. Please try again or email directly."
+      );
+
+      // Reset error after 5 seconds
+      setTimeout(() => {
+        setStatus("idle");
+        setErrorMessage("");
+      }, 5000);
+    }
   };
 
   const handleChange = (
@@ -128,6 +162,13 @@ export default function Contact() {
                 ></textarea>
               </div>
 
+              {/* Error Message */}
+              {status === "error" && errorMessage && (
+                <div className="p-3 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-600 rounded-lg text-red-800 dark:text-red-300 text-sm">
+                  {errorMessage}
+                </div>
+              )}
+
               <button
                 type="submit"
                 disabled={status === "sending"}
@@ -136,10 +177,36 @@ export default function Contact() {
                     ? "bg-blue-400 cursor-not-allowed"
                     : status === "success"
                     ? "bg-green-600 hover:bg-green-700"
+                    : status === "error"
+                    ? "bg-red-600 hover:bg-red-700"
                     : "bg-blue-600 hover:bg-blue-700 transform hover:-translate-y-1 hover:shadow-lg"
                 }`}
               >
-                {status === "sending" && "Sending..."}
+                {status === "sending" && (
+                  <span className="flex items-center justify-center">
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </span>
+                )}
                 {status === "success" && "✓ Message Sent!"}
                 {status === "idle" && "Send Message"}
                 {status === "error" && "Try Again"}
