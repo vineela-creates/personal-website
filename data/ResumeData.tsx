@@ -5,11 +5,34 @@ export interface Experience {
   project: string;
   responsibilities: string[];
   skills: string[];
+  logo?: string;
 }
+
 export interface Education {
   degree: string;
   school: string;
   year: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  technologies: string[];
+  link?: string;
+  github?: string;
+  image?: string;
+  featured?: boolean;
+}
+
+export interface ImpactMetric {
+  icon: string;
+  value: string;
+  label: string;
+}
+
+export interface SkillCategory {
+  category: string;
+  skills: string[];
 }
 
 export interface ResumeData {
@@ -17,20 +40,34 @@ export interface ResumeData {
     name: string;
     title: string;
     summary: string;
+    taglines: string[];
   };
   experience: Experience[];
   education: Education[];
   contact: {
     email: string;
     linkedin: string;
+    github?: string;
+    twitter?: string;
   };
+  projects: Project[];
+  impactMetrics: ImpactMetric[];
+  skillCategories: SkillCategory[];
 }
 
 export const resumeData: ResumeData = {
   intro: {
     name: "Vineela Sridhara",
     title: "Senior Software Engineer",
-    summary: "I build full stack user-friendly web and mobile applications",
+    summary:
+      "I build full stack user-friendly web and mobile applications with ongoing performance optimizations and AI integrations.",
+    taglines: [
+      "Senior Software Engineer",
+      "Performance Optimizer",
+      "Team Mentor",
+      "Cloud Solutions Expert",
+      "AI Enthusiast",
+    ],
   },
   experience: [
     {
@@ -57,6 +94,7 @@ export const resumeData: ResumeData = {
         "Splunk",
         "Dynatrace",
       ],
+      logo: "/optum-logo.png",
     },
     {
       title: "Software Engineer",
@@ -77,6 +115,7 @@ export const resumeData: ResumeData = {
         "MonogDB",
         "OpenShift",
       ],
+      logo: "/optum-logo.png",
     },
     {
       title: "Senior Software Developer",
@@ -98,6 +137,7 @@ export const resumeData: ResumeData = {
         "Tomcat",
         "Jenkins",
       ],
+      logo: "/medica-logo.png",
     },
     {
       title: "Full Stack Developer",
@@ -143,5 +183,119 @@ export const resumeData: ResumeData = {
   contact: {
     email: "sridharavineela304@gmail.com",
     linkedin: "www.linkedin.com/in/vsridha",
+    github: "https://github.com/vineela-creates",
   },
+  projects: [
+    {
+      name: "Medi Assist  - AI Healthcare Companion",
+      description:
+        "AI-powered healthcare companion providing comprehensive drug information and intelligent symptom-based analysis. Features detailed medication data including uses, dosages, side effects, and interactions, along with a symptom analyzer that suggests potential conditions and treatment options. Built with React and TypeScript, focusing on accessibility and user-friendly health decision-making.",
+      technologies: [
+        "Springboot",
+        "RAG",
+        "Vector Store",
+        "OpenAI",
+        "Mongo DB",
+        "Redis",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "HTML",
+      ],
+      link: "https://medi-assist-ui-gules.vercel.app/",
+      github: "https://github.com/vineela-creates/medi-assist-ui",
+      image: "/mediassist.svg",
+      featured: true,
+    },
+  ],
+  impactMetrics: [
+    {
+      icon: "💰",
+      value: "$1M+",
+      label: "Revenue Generated",
+    },
+    {
+      icon: "⚡",
+      value: "80%",
+      label: "Processing Time Reduction",
+    },
+    {
+      icon: "📊",
+      value: "200K+",
+      label: "Records Processed",
+    },
+    {
+      icon: "😊",
+      value: "95%",
+      label: "User Satisfaction",
+    },
+    {
+      icon: "🚀",
+      value: "60%",
+      label: "Faster Issue Resolution",
+    },
+    {
+      icon: "👥",
+      value: "6+",
+      label: "Years Experience",
+    },
+  ],
+  skillCategories: [
+    {
+      category: "Frontend",
+      skills: [
+        "React",
+        "Angular",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+      ],
+    },
+    {
+      category: "Backend",
+      skills: [
+        "Spring Boot",
+        "Node.js",
+        "Express.js",
+        "Microservices",
+        "REST APIs",
+        "GraphQL",
+        "Spring Webflux",
+      ],
+    },
+    {
+      category: "Database",
+      skills: [
+        "PostgreSQL",
+        "MongoDB",
+        "MySQL",
+        "Cosmos DB",
+        "Oracle DB",
+        "PL/SQL",
+      ],
+    },
+    {
+      category: "Cloud & DevOps",
+      skills: [
+        "Microsoft Azure",
+        "Kubernetes",
+        "OpenShift",
+        "Docker",
+        "Jenkins",
+        "Azure DevOps",
+        "CI/CD",
+      ],
+    },
+    {
+      category: "Message Queue & Streaming",
+      skills: ["Apache Kafka", "Spring Cloud Streams", "JMS", "Active MQ"],
+    },
+    {
+      category: "Monitoring & Tools",
+      skills: ["Splunk", "Dynatrace", "Git", "Maven", "JUnit", "log4j"],
+    },
+  ],
 };
