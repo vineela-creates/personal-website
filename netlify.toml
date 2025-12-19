@@ -1,11 +1,9 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
 
 [build.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
-  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_VERSION = "20.11.0"
 
-# Form detection
-[forms]
-  settings = { }
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
